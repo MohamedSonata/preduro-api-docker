@@ -18,6 +18,7 @@ services:
 
 
   strapi:
+    platform: linux/amd64
     build: .
     image: mosonata/preduro-api
     restart: unless-stopped
@@ -45,9 +46,9 @@ services:
     # networks:
     #   - strapi-network
     deploy:
-      replicas: 4
+      replicas: 1
       update_config:
-        parallelism: 2
+        parallelism: 1
         delay: 300s
       restart_policy:
         condition: on-failure
