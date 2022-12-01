@@ -45,13 +45,13 @@ services:
       - '1337:1337'
     # networks:
     #   - strapi-network
-    deploy:
-      replicas: 1
-      update_config:
-        parallelism: 1
-        delay: 300s
-      restart_policy:
-        condition: on-failure
+    # deploy:
+    #   replicas: 1
+    #   update_config:
+    #     parallelism: 1
+    #     delay: 300s
+    #   restart_policy:
+    #     condition: on-failure
     # depends_on:
     #   - strapiDB
       # - strapi-network
