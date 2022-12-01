@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "test_requests",
+  "info": {
+    "singularName": "test-request",
+    "pluralName": "test-requests",
+    "displayName": "TestRequest",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "test": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "request": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

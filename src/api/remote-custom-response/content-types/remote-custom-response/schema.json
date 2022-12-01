@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "remote_custom_responses",
+  "info": {
+    "singularName": "remote-custom-response",
+    "pluralName": "remote-custom-responses",
+    "displayName": "RemoteCustomResponse"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "activePromoCodeID": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

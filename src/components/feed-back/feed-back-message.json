@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_feed_back_feed_back_messages",
+  "info": {
+    "displayName": "FeedBackMessage"
+  },
+  "options": {},
+  "attributes": {
+    "feed_back_msg": {
+      "type": "text"
+    },
+    "rating_value": {
+      "type": "enumeration",
+      "enum": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5"
+      ]
+    },
+    "inbox_messages_id": {
+      "type": "biginteger"
+    }
+  }
+}

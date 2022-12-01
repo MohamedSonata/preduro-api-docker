@@ -1,0 +1,96 @@
+# path: ./docker-compose.yml
+
+version: '3'
+services:
+  app:
+    # container_name: nginxManger
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    depends_on:
+      - strapi
+      - strapiDB
+
+  strapi:
+    build: .
+    image: mosonata/preduro-api
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_HOST: strapiDB
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      APP_KEYS: ${APP_KEYS}
+      NODE_ENV: ${NODE_ENV}
+    volumes:
+      - ./config:/opt/app/config
+      - ./src:/opt/app/src
+      - ./package.json:/opt/package.json
+      - ./yarn.lock:/opt/yarn.lock
+      - ./.env:/opt/app/.env
+      - ./public/uploads:/opt/app/public/uploads
+
+    # networks:
+    #   - strapi-network
+    deploy:
+      replicas: 4
+      update_config:
+        parallelism: 2
+        delay: 300s
+      restart_policy:
+        condition: on-failure
+    depends_on:
+      - strapiDB
+      # - strapi-network
+
+  # nginx:
+  #   container_name: nginxServer
+  #   image: nginx:stable-alpine
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx/strapi.conf:/etc/nginx/sites-enabled/strapi.conf
+  #     - ./nginx/upstream.conf:/etc/nginx/conf.d/upstream.conf
+  #   # networks:
+  #   #   - strapi-network
+  #   depends_on:
+  #     - strapi
+  #     - strapiDB
+
+  strapiDB:
+
+    # platform: linux/amd64 #for platform error on Apple M1 chips
+    restart: unless-stopped
+    env_file: .env
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: postgrespw
+      POSTGRES_DB: ${DATABASE_NAME}
+    volumes:
+      - strapi-data:/var/lib/postgresql/data/ #using a volume
+      #- ./data:/var/lib/postgresql/data/ # if you want to use a bind folder
+
+    ports:
+      - '5432:5432'
+    # networks:
+    #   - strapi-network
+
+volumes:
+  strapi-data:
+
+# networks:
+#   strapi-network:
+#     name: Strapi
+#     driver: bridge

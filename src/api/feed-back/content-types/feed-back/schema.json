@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feed_backs",
+  "info": {
+    "singularName": "feed-back",
+    "pluralName": "feed-backs",
+    "displayName": "feedBack",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "feed_back_msg": {
+      "type": "text",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "rating_value": {
+      "type": "enumeration",
+      "enum": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5"
+      ],
+      "pluginOptions": {}
+    },
+    "user_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "inbox_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::inbox.inbox"
+    },
+    "is_seen": {
+      "pluginOptions": {},
+      "type": "boolean",
+      "default": false
+    },
+    "is_important": {
+      "pluginOptions": {},
+      "type": "boolean",
+      "default": false
+    },
+    "is_closed": {
+      "pluginOptions": {},
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

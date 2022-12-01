@@ -1,0 +1,155 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    },
+    "cart": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cart.cart",
+      "inversedBy": "userID"
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": false,
+      "unique": false
+    },
+    "favorite": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::favorite.favorite",
+      "inversedBy": "userID"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "seller_data": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::seller-data.seller-data",
+      "mappedBy": "users_permissions_user"
+    },
+    "cartIdString": {
+      "type": "string"
+    },
+    "favIdString": {
+      "type": "string"
+    },
+    "sellerType": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "recently_viewed": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::recently-viewed.recently-viewed",
+      "inversedBy": "userID"
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order"
+    },
+    "user_address": {
+      "type": "component",
+      "repeatable": true,
+      "component": "user-address.user-address"
+    },
+    "defaultUserAddressID": {
+      "type": "integer"
+    },
+    "customProvider": {
+      "type": "string",
+      "required": true
+    },
+    "verificationCode": {
+      "type": "biginteger",
+      "unique": false,
+      "required": false,
+      "default": "439484"
+    },
+    "resetCodeSendingTimes": {
+      "type": "integer",
+      "default": 0
+    },
+    "resetCodeSendingDelayed": {
+      "type": "datetime"
+    },
+    "currentUserPass": {
+      "type": "string",
+      "default": "123456"
+    },
+    "inbox": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::inbox.inbox",
+      "inversedBy": "user_id"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_message_component_reply_messages",
+  "info": {
+    "displayName": "reply-message",
+    "icon": "mail-bulk",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "from": {
+      "type": "string",
+      "required": true
+    },
+    "to": {
+      "type": "string",
+      "required": true
+    },
+    "sentAt": {
+      "type": "datetime",
+      "required": true,
+      "default": "2022-11-01T02:14:00.000Z"
+    },
+    "subject": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text",
+      "required": true
+    },
+    "deviceSender": {
+      "type": "string",
+      "required": true
+    },
+    "reply_messages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "message-component.user-reply"
+    }
+  }
+}

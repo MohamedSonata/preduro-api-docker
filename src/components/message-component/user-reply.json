@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_message_component_user_replies",
+  "info": {
+    "displayName": "user-reply",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "sentAt": {
+      "type": "datetime"
+    },
+    "deviceSender": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    }
+  }
+}

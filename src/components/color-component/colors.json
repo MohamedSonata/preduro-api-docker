@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_color_component_colors",
+  "info": {
+    "displayName": "Colors",
+    "icon": "paint-brush",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "firstColor": {
+      "type": "string"
+    },
+    "secondColor": {
+      "type": "string"
+    },
+    "thirdColor": {
+      "type": "string"
+    },
+    "FourthColor": {
+      "type": "string"
+    },
+    "fiveColor": {
+      "type": "string"
+    }
+  }
+}

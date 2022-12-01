@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_user_address_user_addresses",
+  "info": {
+    "displayName": "user_address",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Country": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "street": {
+      "type": "string",
+      "default": "Default"
+    },
+    "user_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "mobile_phone": {
+      "type": "string",
+      "required": true
+    },
+    "sec_mobile_number": {
+      "type": "string"
+    },
+    "addressTypeIcon": {
+      "type": "enumeration",
+      "enum": [
+        "home",
+        "work"
+      ]
+    }
+  }
+}

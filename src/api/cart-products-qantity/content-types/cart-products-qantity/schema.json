@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "cart_products_qantities",
+  "info": {
+    "singularName": "cart-products-qantity",
+    "pluralName": "cart-products-qantities",
+    "displayName": "Cart_Products_Qantity",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product_qantity": {
+      "type": "biginteger",
+      "required": true
+    },
+    "cart": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cart.cart"
+    },
+    "userID": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
