@@ -50,8 +50,8 @@ services:
         delay: 300s
       restart_policy:
         condition: on-failure
-    depends_on:
-      - strapiDB
+    # depends_on:
+    #   - strapiDB
       # - strapi-network
 
   # nginx:
@@ -68,24 +68,24 @@ services:
   #     - strapi
   #     - strapiDB
 
-  strapiDB:
+  # strapiDB:
 
-    platform: linux/amd64 #for platform error on Apple M1 chips
-    restart: unless-stopped
-    env_file: .env
-    image: postgres:latest
-    environment:
-      POSTGRES_USER: ${DATABASE_USERNAME}
-      POSTGRES_PASSWORD: postgrespw
-      POSTGRES_DB: ${DATABASE_NAME}
-    volumes:
-      - strapi-data:/var/lib/postgresql/data/ #using a volume
-      #- ./data:/var/lib/postgresql/data/ # if you want to use a bind folder
+  #   platform: linux/amd64 #for platform error on Apple M1 chips
+  #   restart: unless-stopped
+  #   env_file: .env
+  #   image: postgres:latest
+  #   environment:
+  #     POSTGRES_USER: ${DATABASE_USERNAME}
+  #     POSTGRES_PASSWORD: postgrespw
+  #     POSTGRES_DB: ${DATABASE_NAME}
+  #   volumes:
+  #     - strapi-data:/var/lib/postgresql/data/ #using a volume
+  #     #- ./data:/var/lib/postgresql/data/ # if you want to use a bind folder
 
-    ports:
-      - '5432:5432'
-    # networks:
-    #   - strapi-network
+  #   ports:
+  #     - '5432:5432'
+  #   # networks:
+  #   #   - strapi-network
 
 volumes:
   strapi-data:
