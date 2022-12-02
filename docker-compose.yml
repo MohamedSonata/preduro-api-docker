@@ -3,7 +3,6 @@
 version: '3'
 services:
   strapi:
-    platform: linux/amd64
     container_name: strapi
     build: .
     image: mosonata/preduro-api
