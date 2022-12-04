@@ -18,16 +18,16 @@ services:
       restart_policy:
         condition: on-failure
     environment:
-      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_CLIENT: postgres
       DATABASE_HOST: strapiDB
-      DATABASE_PORT: ${DATABASE_PORT}
-      DATABASE_NAME: ${DATABASE_NAME}
-      DATABASE_USERNAME: ${DATABASE_USERNAME}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-      JWT_SECRET: ${JWT_SECRET}
-      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
-      APP_KEYS: ${APP_KEYS}
-      NODE_ENV: ${NODE_ENV}
+      DATABASE_PORT: 5432
+      DATABASE_NAME: postgres
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgrespw
+      JWT_SECRET: EKTlwUaxZtI0ufLT/5KbQA==
+      ADMIN_JWT_SECRET: z0GurZ7dKAxmfY7OUEiXPA==
+      APP_KEYS: ntgWjxfIwfaj5gp818L6GA==,wPOtAPxzZuNg2rK+3NzefA==
+      NODE_ENV: production
     volumes:
       - ./config:/opt/app/config
       - ./src:/opt/app/src
@@ -35,8 +35,8 @@ services:
       - ./yarn.lock:/opt/yarn.lock
       - ./.env:/opt/app/.env
       - ./public/uploads:/opt/app/public/uploads
-    # ports:
-    #   - '1337:1337'
+    ports:
+      - '1337:1337'
     # networks:
     #   - express-app_my-overlay
     depends_on:
