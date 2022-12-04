@@ -38,7 +38,7 @@ services:
     # ports:
     #   - '1337:1337'
     networks:
-      - my-overlay
+      - express-app_my-overlay
     depends_on:
       - strapiDB
       
@@ -60,7 +60,7 @@ services:
     ports:
       - '5432:5432'
     networks:
-      - my-overlay
+      - express-app_my-overlay
 
 volumes:
   strapi-data:
