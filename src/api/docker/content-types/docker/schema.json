@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dockers",
+  "info": {
+    "singularName": "docker",
+    "pluralName": "dockers",
+    "displayName": "docker"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dockerDone": {
+      "type": "string"
+    }
+  }
+}
