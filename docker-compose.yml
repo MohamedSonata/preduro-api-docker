@@ -6,7 +6,7 @@ services:
     # platform: linux/amd64
     # container_name: strapi
     build: .
-    image: mosonata/strapi-api
+    image: mosonata/strapi-api:buildx
 
     # restart: unless-stopped
     env_file: .env

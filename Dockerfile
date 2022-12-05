@@ -8,7 +8,7 @@ FROM --platform=linux/arm64 node:16-alpine
 RUN apk update && apk add  build-base gcc autoconf automake zlib-dev libpng-dev nasm bash vips-dev
 
 ARG NODE_ENV=production
-ENV NODE_ENV=${NODE_ENV}
+ENV NODE_ENV=production
 WORKDIR /opt/
 COPY ./package.json ./yarn.lock ./
 ENV PATH /opt/node_modules/.bin:$PATH
