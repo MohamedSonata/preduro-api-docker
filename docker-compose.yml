@@ -9,7 +9,7 @@ services:
     image: mosonata/strapi-api:buildx
 
     # restart: unless-stopped
-    env_file: .env
+    env_file: ./config/production/.env
     deploy:
       replicas: 6
       update_config:
@@ -18,16 +18,27 @@ services:
       restart_policy:
         condition: on-failure
     environment:
-      DATABASE_CLIENT: postgres
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: strapiDB
-      DATABASE_PORT: 5432
-      DATABASE_NAME: postgres
-      DATABASE_USERNAME: postgres
-      DATABASE_PASSWORD: postgrespw
-      JWT_SECRET: EKTlwUaxZtI0ufLT/5KbQA==
-      ADMIN_JWT_SECRET: z0GurZ7dKAxmfY7OUEiXPA==
-      APP_KEYS: ntgWjxfIwfaj5gp818L6GA==,wPOtAPxzZuNg2rK+3NzefA==
-      NODE_ENV: production
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      APP_KEYS: ${APP_KEYS}
+      NODE_ENV: ${NODE_ENV}
+      # # DATABASE_CLIENT: postgres
+      # DATABASE_CLIENT: postgres
+      # DATABASE_HOST: strapiDB
+      # DATABASE_PORT: 5432
+      # DATABASE_NAME: postgres
+      # DATABASE_USERNAME: postgres
+      # DATABASE_PASSWORD: postgrespw
+      # JWT_SECRET: EKTlwUaxZtI0ufLT/5KbQA==
+      # ADMIN_JWT_SECRET: z0GurZ7dKAxmfY7OUEiXPA==
+      # APP_KEYS: ntgWjxfIwfaj5gp818L6GA==,wPOtAPxzZuNg2rK+3NzefA==
+      # NODE_ENV: production
     volumes:
       - ./config:/opt/app/config
       - ./src:/opt/app/src
@@ -46,8 +57,8 @@ services:
     # container_name: strapiDB
     # platform: linux/amd64 #for platform error on Apple M1 chips
     restart: unless-stopped
-    env_file: .env
-    image: postgres:latest
+    env_file: ./config/production/.env
+    image: postgres:15.1-alpine
     environment:
       POSTGRES_USER: ${DATABASE_USERNAME}
       POSTGRES_PASSWORD: postgrespw

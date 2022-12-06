@@ -2,3 +2,5 @@
 .cache/
 .git/
 node_modules/
+build/
+.env
