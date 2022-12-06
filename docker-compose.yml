@@ -9,7 +9,7 @@ services:
     image: mosonata/strapi-api:buildx
 
     # restart: unless-stopped
-    env_file: ./config/production/.env
+    env_file: ./config/production/env
     deploy:
       replicas: 6
       update_config:
