@@ -3,7 +3,7 @@
 module.exports = ({ env }) => ({
   // const { host, port, database, user, password } = env('DATABASE_URL');
 
-  
+
     connection: {
         client: 'postgres',
         connection: {
@@ -14,6 +14,17 @@ module.exports = ({ env }) => ({
           password: env('DATABASE_PASSWORD', ''),
           // schema: env('DATABASE_SCHEMA', ''), // Not required
           ssl: env.bool('DATABASE_SSL', false)
+        },
+        debug: false,
+        pool: {
+          min: 0,
+          max: 10,
+          acquireTimeoutMillis: 600000,
+          createTimeoutMillis: 30000,
+          idleTimeoutMillis: 20000,
+          reapIntervalMillis: 20000,
+          createRetryIntervalMillis: 200
+        
         },
     
       },
