@@ -1,6 +1,7 @@
 .tmp/
 .cache/
 .git/
-node_modules/
 build/
+node_modules/
 .env
+data/

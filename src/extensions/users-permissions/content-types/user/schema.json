@@ -150,6 +150,12 @@
       "relation": "oneToOne",
       "target": "api::inbox.inbox",
       "inversedBy": "user_id"
+    },
+    "recentlyViewedIdString": {
+      "type": "string"
+    },
+    "inboxIdString": {
+      "type": "string"
     }
   }
 }

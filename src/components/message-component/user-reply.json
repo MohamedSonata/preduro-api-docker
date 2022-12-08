@@ -7,22 +7,38 @@
   "options": {},
   "attributes": {
     "content": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "sentAt": {
-      "type": "datetime"
+      "type": "datetime",
+      "required": true,
+      "default": "2022-10-31T22:05:00.000Z"
     },
     "deviceSender": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "default": "Android"
     },
     "subject": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "from": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "to": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "isFavorite": {
+      "type": "boolean",
+      "default": false
+    },
+    "isImportant": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

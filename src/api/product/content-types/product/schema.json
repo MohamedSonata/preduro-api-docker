@@ -77,7 +77,7 @@
       }
     },
     "old_price": {
-      "type": "decimal",
+      "type": "float",
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -126,7 +126,7 @@
       }
     },
     "price": {
-      "type": "decimal",
+      "type": "float",
       "pluginOptions": {
         "i18n": {
           "localized": true

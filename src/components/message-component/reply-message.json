@@ -32,10 +32,31 @@
       "type": "string",
       "required": true
     },
+    "isOpen": {
+      "type": "boolean",
+      "default": false
+    },
+    "isFavorite": {
+      "type": "boolean",
+      "default": false
+    },
+    "isImportant": {
+      "type": "boolean",
+      "default": false
+    },
+    "isClosed": {
+      "type": "boolean",
+      "default": false
+    },
     "reply_messages": {
       "type": "component",
       "repeatable": true,
       "component": "message-component.user-reply"
+    },
+    "feed_back": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::feed-back.feed-back"
     }
   }
 }

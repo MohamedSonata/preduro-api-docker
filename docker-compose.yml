@@ -37,7 +37,7 @@ services:
       replicas: 6
       update_config:
         parallelism: 2
-        delay: 30s
+        delay: 120s
       restart_policy:
         condition: on-failure
     volumes:
