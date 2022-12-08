@@ -39,7 +39,7 @@ services:
         parallelism: 2
         delay: 120s
       restart_policy:
-        condition: on-failure
+        condition: any
     volumes:
       - ./config:/opt/app/config
       - ./src:/opt/app/src
