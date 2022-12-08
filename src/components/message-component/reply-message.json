@@ -57,6 +57,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::feed-back.feed-back"
+    },
+    "user_id": {
+      "type": "string"
     }
   }
 }
