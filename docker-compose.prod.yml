@@ -47,8 +47,8 @@ services:
       - ./yarn.lock:/opt/yarn.lock
       - ./.env:/opt/app/.env
       - ./public/uploads:/opt/app/public/uploads
-    # ports:
-    #   - '1338:1338'
+    ports:
+      - '1338:1338'
     # networks:
     #   - express-app_my-overlay
     depends_on:
