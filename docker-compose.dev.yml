@@ -79,5 +79,5 @@ volumes:
 
 networks:
   strapiDev:
-    name: strapiDev
+    # name: strapiDev
     driver: bridge
