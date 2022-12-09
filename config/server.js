@@ -3,13 +3,11 @@
  const isDevelopment = process.env.NODE_ENV === 'development';
 
  const port = isProduction ? '1338'
-            : isDevelopment
-            ? '1337'
-            : '1333';
+            : '1337';
 
 
 module.exports = ({ env }) => ({
-  host: env('HOST', '0.0.0.0'),
+  host: env('HOST'),
   port:port,
 
   // port:env('NODE_ENV')? 'production' = env.int('PROD_PORT','1338') : env.int('PORT','1337') ,

@@ -47,10 +47,9 @@ services:
       - ./yarn.lock:/opt/yarn.lock
       - ./.env:/opt/app/.env
       - ./public/uploads:/opt/app/public/uploads
-    ports:
-      - '1337:1337'
-    networks:
-      - strapiDev
+    # ports:
+    #   - '1337:1337'
+
     depends_on:
       - strapiDbDev
       
@@ -71,13 +70,7 @@ services:
 
     ports:
       - '5432:5432'
-    networks:
-      - strapiDev
 
 volumes:
   strapi-data:
 
-networks:
-  strapiDev:
-    # name: strapiDev
-    driver: bridge
