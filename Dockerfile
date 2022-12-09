@@ -19,5 +19,5 @@ WORKDIR /opt/app
 COPY ./ .
 RUN yarn build
 ENTRYPOINT ["docker-entrypoint.sh"]
-EXPOSE 1338
+EXPOSE 1337
 CMD ["yarn", "start"]
