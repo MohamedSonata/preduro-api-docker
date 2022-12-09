@@ -2,7 +2,7 @@
 
     module.exports = ({ env }) => ({
         proxy: true,
-        url: env('APP_URL'), // replaces `host` and `port` properties in the development environment
+        url: env('HOST',1337), // replaces `host` and `port` properties in the development environment
         app: { 
           keys: env.array('APP_KEYS')
         },
