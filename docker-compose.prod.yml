@@ -49,8 +49,8 @@ services:
       - ./public/uploads:/opt/app/public/uploads
     ports:
       - '1338:1338'
-    # networks:
-    #   - express-app_my-overlay
+    networks:
+      - strapiProd
     depends_on:
       - strapiDbProd
       
@@ -71,16 +71,16 @@ services:
 
     ports:
       - '5432:5432'
-    # networks:
-    #   - express-app_my-overlay
+    networks:
+      - strapiProd
 
 volumes:
   strapi-data:
 
-# networks:
-#   strapi:
-#     # name: Strapi
-#     driver: bridge
+networks:
+  strapiProd:
+    name: strapiProd
+    driver: bridge
 
 # version: '3'
 # services:
