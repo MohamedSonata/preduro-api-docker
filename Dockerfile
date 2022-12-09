@@ -20,5 +20,5 @@ COPY ./ .
 RUN yarn build
 ENTRYPOINT ["docker-entrypoint.sh"]
 EXPOSE 1337
-EXPOSE 1338
+
 CMD ["yarn", "start"]
