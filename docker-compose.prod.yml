@@ -24,7 +24,7 @@ services:
       # NODE_ENV: ${NODE_ENV}
       # DATABASE_CLIENT: postgres
       DATABASE_CLIENT: postgres
-      DATABASE_HOST: strapiDbDev
+      DATABASE_HOST: strapiDbProd
       DATABASE_PORT: 5430
       DATABASE_NAME: postgres
       DATABASE_USERNAME: postgres
