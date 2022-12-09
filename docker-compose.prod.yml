@@ -24,7 +24,7 @@ services:
       # DATABASE_CLIENT: postgres
       DATABASE_CLIENT: postgres
       DATABASE_HOST: strapiDB
-      DATABASE_PORT: 5432
+      DATABASE_PORT: 5433
       DATABASE_NAME: postgres
       DATABASE_USERNAME: postgres
       DATABASE_PASSWORD: postgrespw
@@ -47,7 +47,7 @@ services:
       - ./.env:/opt/app/.env
       - ./public/uploads:/opt/app/public/uploads
     ports:
-      - '1338:1337'
+      - '1338:1338'
     # networks:
     #   - express-app_my-overlay
     depends_on:
@@ -69,7 +69,7 @@ services:
       #- ./data:/var/lib/postgresql/data/ # if you want to use a bind folder
 
     ports:
-      - '5432:5432'
+      - '5433:5432'
     # networks:
     #   - express-app_my-overlay
 
