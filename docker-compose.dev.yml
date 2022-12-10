@@ -2,11 +2,12 @@
 
 version: '3'
 services:
-  strapi-dev:
+  strapi-testing:
     # platform: linux/amd64
     # container_name: strapi
     build: .
-    image: mosonata/strapi-api:buildx
+    # this image for testing  app on docker server with new build Source image before updateing main image for production
+    image: mosonata/app-testing:dev1.0
 
     # restart: unless-stopped
     env_file: .env
@@ -24,7 +25,7 @@ services:
       # NODE_ENV: ${NODE_ENV}
       # DATABASE_CLIENT: postgres
       DATABASE_CLIENT: postgres
-      DATABASE_HOST: strapiDbDev
+      DATABASE_HOST: strapiDbTesting
       DATABASE_PORT: 5431
       DATABASE_NAME: postgres
       DATABASE_USERNAME: postgres
@@ -51,9 +52,9 @@ services:
       - '1338:1338'
 
     depends_on:
-      - strapiDbDev
+      - strapiDbTesting
       
-  strapiDbDev:
+  strapiDbTesting:
     # container_name: strapiDB
     # platform: linux/amd64 #for platform error on Apple M1 chips
     restart: unless-stopped
@@ -69,6 +70,7 @@ services:
       #- ./data:/var/lib/postgresql/data/ # if you want to use a bind folder
 
     ports:
+    # First Port for Caontainer Connection : second Port For Postgres Image Default port 
       - '5431:5432'
 
 volumes:
