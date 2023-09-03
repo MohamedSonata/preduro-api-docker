@@ -118,16 +118,6 @@
       "target": "api::categorie.categorie",
       "inversedBy": "products"
     },
-    "serial_number": {
-      "type": "integer",
-      "required": true,
-      "unique": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "productHasVariants": {
       "pluginOptions": {
         "i18n": {
