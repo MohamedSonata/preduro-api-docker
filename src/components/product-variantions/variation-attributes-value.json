@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_product_variantions_variation_attributes_values",
+  "info": {
+    "displayName": "variationAttributesValue"
+  },
+  "options": {},
+  "attributes": {
+    "attributesValue": {
+      "type": "string"
+    }
+  }
+}

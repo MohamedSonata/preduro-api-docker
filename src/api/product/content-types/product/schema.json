@@ -55,14 +55,6 @@
         }
       }
     },
-    "discount": {
-      "type": "integer",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "images": {
       "type": "media",
       "multiple": true,
@@ -76,33 +68,25 @@
         }
       }
     },
-    "old_price": {
-      "type": "float",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "quantity": {
       "type": "integer",
       "required": true,
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
-    "type": {
+    "productOptions": {
       "type": "enumeration",
       "enum": [
         "new",
         "used",
-        "consists"
+        "refurbished"
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
@@ -111,11 +95,6 @@
       "relation": "manyToOne",
       "target": "api::seller-data.seller-data",
       "inversedBy": "products"
-    },
-    "colors": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::color.color"
     },
     "benefits": {
       "type": "text",
@@ -126,10 +105,10 @@
       }
     },
     "price": {
-      "type": "float",
+      "type": "decimal",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
@@ -140,7 +119,7 @@
       "inversedBy": "products"
     },
     "serial_number": {
-      "type": "biginteger",
+      "type": "integer",
       "required": true,
       "unique": true,
       "pluginOptions": {
@@ -149,49 +128,94 @@
         }
       }
     },
-    "weight": {
-      "type": "enumeration",
-      "enum": [
-        "GM200",
-        "GM400",
-        "GM500",
-        "GM750",
-        "Kg1",
-        "Kg1.5",
-        "Kg2",
-        "Kg2.5",
-        "Kg3",
-        "Kg3.5",
-        "Kg4",
-        "Kg4.5",
-        "Kg5",
-        "Kg5.5",
-        "Kg6"
-      ],
+    "productHasVariants": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "type": "boolean",
+      "default": false
     },
-    "size": {
-      "type": "enumeration",
-      "enum": [
-        "Small",
-        "Medium",
-        "Large",
-        "XLarge",
-        "XXLarge",
-        "XXXLarge",
-        "XXXXLarge",
-        "XXXXXLarge",
-        "XXXXXXLarge"
-      ],
+    "cashOnDeliveryElegible": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "type": "boolean",
+      "default": true
+    },
+    "productType": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "SimpleProduct",
+        "VariableProduct"
+      ],
+      "default": "SimpleProduct"
+    },
+    "productAvailability": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "boolean",
+      "default": true
+    },
+    "productDetails": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "product-variantions.product-details"
+    },
+    "variationsAttributes": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "product-variantions.base-variation"
+      ]
+    },
+    "variations": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "product-variantions.single-variation"
+      ]
+    },
+    "salePrice": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "decimal"
+    },
+    "creditDebitCardsEligable": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false
     }
   }
 }

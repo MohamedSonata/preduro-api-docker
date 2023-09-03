@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sub_title_content_comp_sub_title_content_comps",
+  "info": {
+    "displayName": "SubTitle-Content-Comp",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

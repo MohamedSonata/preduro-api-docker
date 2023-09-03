@@ -22,21 +22,6 @@
       "target": "plugin::users-permissions.user",
       "mappedBy": "cart"
     },
-    "cartProductQan": {
-      "type": "component",
-      "repeatable": true,
-      "component": "cart-product-qan.cart-product-qan",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "cartProducts": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product.product"
-    },
     "total_price": {
       "type": "decimal",
       "pluginOptions": {
@@ -44,6 +29,16 @@
           "localized": true
         }
       }
+    },
+    "productDetails": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "cart-product-qan.cart-product-qan"
     }
   }
 }

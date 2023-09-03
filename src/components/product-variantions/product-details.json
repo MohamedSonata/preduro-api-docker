@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_product_variantions_product_details",
+  "info": {
+    "displayName": "product-details"
+  },
+  "options": {},
+  "attributes": {
+    "productDetailsKey": {
+      "type": "string"
+    },
+    "productDetailsValue": {
+      "type": "string"
+    }
+  }
+}

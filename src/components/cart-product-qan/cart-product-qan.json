@@ -1,7 +1,7 @@
 {
   "collectionName": "components_cart_product_qan_cart_product_qans",
   "info": {
-    "displayName": "cartProductQan",
+    "displayName": "productDetails",
     "icon": "arrow-up",
     "description": ""
   },
@@ -15,39 +15,8 @@
     "Qan": {
       "type": "integer"
     },
-    "weight": {
-      "type": "enumeration",
-      "enum": [
-        "GM200",
-        "GM400",
-        "GM500",
-        "GM750",
-        "Kg1",
-        "Kg1.5",
-        "Kg2",
-        "Kg2.5",
-        "Kg3",
-        "Kg3.5",
-        "Kg4",
-        "Kg4.5",
-        "Kg5",
-        "Kg5.5",
-        "Kg6"
-      ]
-    },
-    "size": {
-      "type": "enumeration",
-      "enum": [
-        "Small",
-        "Medium",
-        "Large",
-        "XLarge",
-        "XXLarge",
-        "XXXLarge",
-        "XXXXLarge",
-        "XXXXXLarge",
-        "XXXXXXLarge"
-      ]
+    "selectedVariationID": {
+      "type": "integer"
     }
   }
 }

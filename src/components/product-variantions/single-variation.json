@@ -1,0 +1,63 @@
+{
+  "collectionName": "components_product_variantions_single_variations",
+  "info": {
+    "displayName": "singleVariation",
+    "icon": "calendar",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "regularPrice": {
+      "type": "decimal"
+    },
+    "salePrice": {
+      "type": "decimal"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "stockStatus": {
+      "type": "enumeration",
+      "enum": [
+        "InStock",
+        "OutOfStock"
+      ]
+    },
+    "weight": {
+      "type": "string"
+    },
+    "dimensions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "product-variantions.diemnsions"
+    },
+    "description": {
+      "type": "string"
+    },
+    "color": {
+      "displayName": "SimpleColorInfo",
+      "type": "component",
+      "repeatable": false,
+      "component": "product-variantions.simple-color-info"
+    },
+    "variationValue": {
+      "displayName": "variationValue",
+      "type": "component",
+      "repeatable": true,
+      "component": "product-variantions.variation-value"
+    },
+    "Quantity": {
+      "type": "biginteger"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    }
+  }
+}

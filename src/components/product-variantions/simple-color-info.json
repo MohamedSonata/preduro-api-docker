@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_product_variantions_simple_color_infos",
+  "info": {
+    "displayName": "SimpleColorInfo",
+    "icon": "paint"
+  },
+  "options": {},
+  "attributes": {
+    "colorName": {
+      "type": "string"
+    },
+    "hexColorCode": {
+      "type": "string"
+    }
+  }
+}

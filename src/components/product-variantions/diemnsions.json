@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_product_variantions_diemnsions",
+  "info": {
+    "displayName": "Diemnsions",
+    "icon": "question"
+  },
+  "options": {},
+  "attributes": {
+    "length": {
+      "type": "string"
+    },
+    "width": {
+      "type": "string"
+    },
+    "height": {
+      "type": "string"
+    }
+  }
+}

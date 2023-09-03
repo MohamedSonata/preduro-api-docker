@@ -27,22 +27,13 @@
     "orderStatus": {
       "type": "enumeration",
       "enum": [
-        "inProccess",
+        "InProcess",
         "Received",
         "WithCarrier",
         "OutForDelivery",
         "Delivered"
       ],
       "required": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "deliveredData": {
-      "type": "datetime",
-      "default": "2022-07-12T22:05:00.000Z",
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -59,7 +50,7 @@
       }
     },
     "shippingFee": {
-      "type": "biginteger",
+      "type": "decimal",
       "required": true,
       "pluginOptions": {
         "i18n": {
@@ -67,7 +58,7 @@
         }
       }
     },
-    "delivereyType": {
+    "deliveryType": {
       "type": "enumeration",
       "enum": [
         "Standard",
@@ -79,11 +70,6 @@
           "localized": true
         }
       }
-    },
-    "products": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product.product"
     },
     "order_products": {
       "type": "component",
@@ -103,23 +89,62 @@
         }
       }
     },
-    "orderYear": {
-      "type": "string",
-      "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "orderNumber": {
+    "shippingAddress": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
-      "unique": true
+      "type": "text",
+      "required": true
+    },
+    "expectedDeliveryDate": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "date",
+      "required": true
+    },
+    "paymentMethod": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "CashOnDelivery",
+        "CreditCard",
+        "Installments"
+      ]
+    },
+    "user_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "orders"
+    },
+    "orderDate": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "date",
+      "required": true,
+      "default": "2023-03-02"
+    },
+    "orderYear": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "integer",
+      "default": 2023,
+      "required": true
     }
   }
 }

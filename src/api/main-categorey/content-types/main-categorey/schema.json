@@ -29,6 +29,25 @@
           "localized": true
         }
       }
+    },
+    "iconFontFamily": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "default": "MaterialIcons"
+    },
+    "iconDataId": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
     }
   }
 }

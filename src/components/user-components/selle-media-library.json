@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_user_components_selle_media_libraries",
+  "info": {
+    "displayName": "seller_media_library",
+    "icon": "user",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

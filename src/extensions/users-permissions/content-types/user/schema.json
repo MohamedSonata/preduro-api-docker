@@ -9,8 +9,7 @@
     "displayName": "User"
   },
   "options": {
-    "draftAndPublish": false,
-    "timestamps": true
+    "draftAndPublish": false
   },
   "attributes": {
     "username": {
@@ -100,11 +99,6 @@
     "favIdString": {
       "type": "string"
     },
-    "sellerType": {
-      "type": "boolean",
-      "default": false,
-      "required": true
-    },
     "recently_viewed": {
       "type": "relation",
       "relation": "oneToOne",
@@ -114,7 +108,8 @@
     "orders": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::order.order"
+      "target": "api::order.order",
+      "mappedBy": "user_id"
     },
     "user_address": {
       "type": "component",
@@ -123,10 +118,6 @@
     },
     "defaultUserAddressID": {
       "type": "integer"
-    },
-    "customProvider": {
-      "type": "string",
-      "required": true
     },
     "verificationCode": {
       "type": "biginteger",
@@ -156,6 +147,28 @@
       "relation": "oneToOne",
       "target": "api::inbox.inbox",
       "inversedBy": "user_id"
+    },
+    "userType": {
+      "type": "enumeration",
+      "enum": [
+        "Admin",
+        "Moderator",
+        "ContentMangment",
+        "Seller",
+        "Customer"
+      ],
+      "required": true,
+      "default": "Customer"
+    },
+    "customProvider": {
+      "type": "enumeration",
+      "enum": [
+        "email",
+        "google",
+        "facebook",
+        "twiter"
+      ],
+      "default": "email"
     }
   }
 }

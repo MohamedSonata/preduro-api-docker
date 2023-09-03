@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "product_serial_nums",
+  "info": {
+    "singularName": "product-serial-num",
+    "pluralName": "product-serial-nums",
+    "displayName": "productSerialNum",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product_serial_number": {
+      "type": "integer"
+    }
+  }
+}

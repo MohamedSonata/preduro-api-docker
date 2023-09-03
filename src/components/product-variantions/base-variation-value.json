@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_product_variantions_base_variation_values",
+  "info": {
+    "displayName": "baseVariationValue",
+    "icon": "feather"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    }
+  }
+}

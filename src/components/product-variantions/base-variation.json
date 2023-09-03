@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_product_variantions_base_variations",
+  "info": {
+    "displayName": "variationAttribute",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "variationName": {
+      "type": "string"
+    },
+    "variationValues": {
+      "displayName": "baseVariationValue",
+      "type": "component",
+      "repeatable": true,
+      "component": "product-variantions.base-variation-value"
+    }
+  }
+}
