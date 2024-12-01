@@ -12,27 +12,27 @@ services:
     env_file: .env
 
     environment:
-      # DATABASE_CLIENT: ${DATABASE_CLIENT}
-      # DATABASE_HOST: strapiDB
-      # DATABASE_PORT: ${DATABASE_PORT}
-      # DATABASE_NAME: ${DATABASE_NAME}
-      # DATABASE_USERNAME: ${DATABASE_USERNAME}
-      # DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-      # JWT_SECRET: ${JWT_SECRET}
-      # ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
-      # APP_KEYS: ${APP_KEYS}
-      # NODE_ENV: ${NODE_ENV}
-      # DATABASE_CLIENT: postgres
-      DATABASE_CLIENT: postgres
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: strapiDB
-      DATABASE_PORT: 5432
-      DATABASE_NAME: postgres
-      DATABASE_USERNAME: postgres
-      DATABASE_PASSWORD: postgrespw
-      JWT_SECRET: EKTlwUaxZtI0ufLT/5KbQA==
-      ADMIN_JWT_SECRET: z0GurZ7dKAxmfY7OUEiXPA==
-      APP_KEYS: ntgWjxfIwfaj5gp818L6GA==,wPOtAPxzZuNg2rK+3NzefA==
-      NODE_ENV: production
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      APP_KEYS: ${APP_KEYS}
+      NODE_ENV: ${NODE_ENV}
+      # DATABASE_CLIENT: postgres
+      # DATABASE_CLIENT: postgres
+      # DATABASE_HOST: strapiDB
+      # DATABASE_PORT: 5432
+      # DATABASE_NAME: postgres
+      # DATABASE_USERNAME: postgres
+      # DATABASE_PASSWORD: postgrespw
+      # JWT_SECRET: EKTlwUaxZtI0ufLT/5KbQA==
+      # ADMIN_JWT_SECRET: z0GurZ7dKAxmfY7OUEiXPA==
+      # APP_KEYS: ntgWjxfIwfaj5gp818L6GA==,wPOtAPxzZuNg2rK+3NzefA==
+      # NODE_ENV: production
     deploy:
       replicas: 6
       update_config:
